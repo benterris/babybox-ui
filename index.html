@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calendrier Babybox</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <h1>Calendrier Babybox</h1>
+</header>
+
+<main>
+  <div id="calendar" class="calendar">
+    <div id="scroller" class="scroller">
+      <div id="months" class="months"></div>
+      <div id="rows" class="rows"></div>
+    </div>
+    <p id="empty" class="empty">Aucun enfant pour le moment.</p>
+    <div class="add-row">
+      <button id="add-btn" class="btn-primary" type="button">+ Ajouter un enfant</button>
+    </div>
+  </div>
+
+  <ul class="legend" id="sets"></ul>
+  <ul class="legend legend-schedule" id="legend"></ul>
+</main>
+
+<dialog id="kid-dialog">
+  <form method="dialog" id="kid-form">
+    <h2 id="dialog-title">Ajouter un enfant</h2>
+
+    <label for="kid-name">Prénom</label>
+    <input id="kid-name" name="name" type="text" required autocomplete="off" maxlength="40">
+
+    <label for="kid-dob">Date de naissance (JJ/MM/AAAA)</label>
+    <input id="kid-dob" name="dob" type="text" required autocomplete="off"
+           inputmode="numeric" maxlength="10" placeholder="JJ/MM/AAAA">
+
+    <label for="kid-set">Série de box</label>
+    <div class="set-field">
+      <select id="kid-set" name="set" required>
+        <option value="L">L</option>
+        <option value="A">A</option>
+      </select>
+      <span class="swatch" id="set-swatch"></span>
+      <span class="hint" id="set-hint"></span>
+    </div>
+
+    <p class="form-error" id="form-error" hidden></p>
+
+    <menu>
+      <button type="button" id="delete-btn" class="btn-danger" hidden>Supprimer</button>
+      <span class="spacer"></span>
+      <button type="button" id="cancel-btn" class="btn-ghost">Annuler</button>
+      <button type="submit" class="btn-primary" id="submit-btn">Ajouter</button>
+    </menu>
+  </form>
+</dialog>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+- App UI is in french, but code / comments in english
+- Keep comments minimal
